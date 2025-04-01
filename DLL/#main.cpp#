@@ -9,7 +9,7 @@ int main()
 
     //PLEASE PUT YOUR CODE HERE to call the function assigned
     //    object.removeGreaterNine();
-    object.swapAdjacent();
+    //object.swapAdjacent();
     object.display();
     
     return 0;

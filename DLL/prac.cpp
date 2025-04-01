@@ -1,5 +1,5 @@
 #include "dlist.h"
-
+#include <iostream>
 
 //Removes numbers greater than 9
 void dlist::removeGreaterNine() {
@@ -35,3 +35,65 @@ void dlist::removeGreaterNine(node* curr) {
   } 
   removeGreaterNine(nextNode); // move onto next node
 } 
+
+void dlist::swapAdjacent() {
+  swapAdjacent(head);
+}
+
+void dlist::swapAdjacent(node* &curr) {
+  //Base case (end of list) (or a list with odd number of nodes)
+  if (curr == nullptr || curr->next == nullptr) {
+    return;
+  }
+
+  node* first = curr;
+  node* second = curr->next;
+
+  //Swap nexts
+  first->next = second->next;
+  second->next = first;
+
+  //swap previouses
+  second->previous = first->previous; //second prev is now first prev
+  first->previous = second; //second would be behind first now
+
+  //Swap nodes:
+  curr = second;
+  
+  
+  swapAdjacent(curr->next->next); //move over two spaces (to get to the next adjacnet group)
+}
+
+
+//makes a new list of copies except three
+node* dlist::copyExceptThree() {
+  node* newHead = copyExceptThree(head, newHead);
+
+  //print out stuff
+  while (curr) {
+    std::cout << curr->data << std::endl;
+    curr = curr->next;
+  }
+  
+  return newHead;
+}
+
+node* dlist::copyExceptThree(node* curr) {
+  //base case (end of list)
+  if (!curr) {
+    return nullptr;
+  }
+
+  //skip if three
+    if (curr->data == 3) {
+      return copyExceptThree(curr->next);
+    }
+    
+    //Copy data
+    node* newNode = new node();
+    newNode->data = curr->data;
+    newNode->next = copyExceptThree(curr->next);
+    newNode->next->prev = newNode;
+    return;
+  }
+}

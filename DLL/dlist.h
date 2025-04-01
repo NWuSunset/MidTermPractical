@@ -5,7 +5,6 @@
 #include <cstdlib>
 using namespace std;
 
-
 struct node
 {
     int data;		//some questions use a char * data;
@@ -27,7 +26,17 @@ public:
      /* place your prototype here */
   void removeGreaterNine();
   void removeGreaterNine(node* curr);
-     private:
+
+  void swapAdjacent();
+  void swapAdjacent(node* &curr);
+
+  node* dlist::copyExceptThree();
+  node* dlist::copyExceptThree();
+private:
          node * head;   //notice there is both a head
          node * tail;   //and a tail, common for DLL
 };
+
+//adding at specific positions
+//remove at specific postions
+//copying the list
