@@ -30,8 +30,8 @@ public:
   void swapAdjacent();
   void swapAdjacent(node* &curr);
 
-  node* dlist::copyExceptThree();
-  node* dlist::copyExceptThree();
+  node* copyExceptThree();
+  node* copyExceptThree(node* curr);
 private:
          node * head;   //notice there is both a head
          node * tail;   //and a tail, common for DLL

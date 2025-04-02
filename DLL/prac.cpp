@@ -67,11 +67,12 @@ void dlist::swapAdjacent(node* &curr) {
 
 //makes a new list of copies except three
 node* dlist::copyExceptThree() {
-  node* newHead = copyExceptThree(head, newHead);
+  node* newHead = copyExceptThree(head);
 
+  node* curr = newHead;
   //print out stuff
   while (curr) {
-    std::cout << curr->data << std::endl;
+    std::cout << curr->data << " ";
     curr = curr->next;
   }
   
@@ -89,11 +90,21 @@ node* dlist::copyExceptThree(node* curr) {
       return copyExceptThree(curr->next);
     }
     
-    //Copy data
+    /*Copy data
     node* newNode = new node();
+    newNode->previous = nullptr; //for head case
     newNode->data = curr->data;
     newNode->next = copyExceptThree(curr->next);
-    newNode->next->prev = newNode;
-    return;
+    */ 
+    node* newNode = new node { //could also do this i guess..
+      curr->data,
+      nullptr,
+      copyExceptThree(curr->next)
+    };
+    
+    if (newNode->next) { //if next is not null
+      newNode->next->previous = newNode; //we can set a previous
+    }
+    return newNode;
   }
-}
+

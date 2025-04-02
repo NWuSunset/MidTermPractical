@@ -45,3 +45,29 @@ void removeTen(node* &head) {
     removeTen(head->next);
   }
 }
+
+//adding a while loop would be better but...
+void removeDuplicates(node* curr) {
+  //base case (list end)
+  if (curr == nullptr) { //head null
+    return;
+  }
+
+  node* pos = curr->next;
+  node* prev = curr;
+
+  while (pos != nullptr) {
+    if (pos->data == curr->data) { //delete data if duplicate
+      prev->next = pos->next; //update previous pointer
+      node* temp = pos;
+      pos = pos->next; //update pos (now prev and pos are properly updated)
+      delete temp;
+    } else {
+    prev = pos;
+    pos = pos->next;
+    }
+  }
+
+  //Then move onto the next curr in list 
+  removeDuplicates(curr->next);
+}

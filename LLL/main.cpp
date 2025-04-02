@@ -10,8 +10,8 @@ int main()
     //PLEASE PUT YOUR CODE HERE to call the function assigned
     //removeHead(head);
     //node* newHead = copyFirstLast(head);
-    removeTen(head);
-    
+    //    removeTen(head);
+    removeDuplicates(head);
     display_all(head);
     
     return 0;
