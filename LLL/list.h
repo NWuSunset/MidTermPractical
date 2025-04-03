@@ -17,6 +17,8 @@ node* copyFirstLast(node* head);
 void removeTen(node* &head);
 
 void removeDuplicates(node* curr);
+void addThree(node* head);
+void remove2ndNodes(node* head);
 
 /* These functions are already written and can be called to test out your code */
 void build(node * & head);      //supplied

@@ -71,3 +71,33 @@ void removeDuplicates(node* curr) {
   //Then move onto the next curr in list 
   removeDuplicates(curr->next);
 }
+
+//add three after each instance of 3 in linked list
+void addThree(node* head) {
+  node* curr = head;
+  while (curr != nullptr) {
+    if (curr->data == 3) { //add a duplicate node after
+      node* newNode = new node {
+        3,
+        curr->next
+      };
+      curr->next = newNode; //set curr next to this new node.
+      curr = newNode->next; //move up list
+    } else {
+      curr = curr->next;
+    }
+  }
+}
+
+//removes every second node
+void remove2ndNodes(node* head) {
+  node* curr = head; //start at the second one
+
+  while (curr != nullptr && curr->next != nullptr ) {
+    node* temp = curr->next; //2nd node
+    curr->next = curr->next->next;
+    delete temp;
+    curr = curr->next;
+  }
+}
+

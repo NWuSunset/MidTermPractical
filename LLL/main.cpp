@@ -11,7 +11,9 @@ int main()
     //removeHead(head);
     //node* newHead = copyFirstLast(head);
     //    removeTen(head);
-    removeDuplicates(head);
+    //removeDuplicates(head);
+    //addThree(head);
+    remove2ndNodes(head);
     display_all(head);
     
     return 0;
