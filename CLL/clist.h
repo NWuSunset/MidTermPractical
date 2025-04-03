@@ -28,6 +28,12 @@ class clist
 
   void sumAllData();
   void sumAllData(node* curr, node* end, int &sum);
+
+  void add12After3(); //adds node with value 12 after a node with value 3
+  void add12After3(node *pos, node* end);
+
+  void removeAllOdd();
+  void removeAllOdd(node* &pos, node* end);
 	private:
 		node * rear;
 };

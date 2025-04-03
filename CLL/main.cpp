@@ -10,11 +10,12 @@ int main()
 
     //PLEASE PUT YOUR CODE HERE to call the function assigned
 
-    node* newHead = object.copyExceptTwo(); 
+    //node* newHead = object.copyExceptTwo(); 
     //object.sumAllData();
-    
-    
-    //object.display(); //resulting list after your function call!
+    //object.add12After3();
+
+    object.removeAllOdd();
+    object.display(); //resulting list after your function call!
     
     return 0;
 }

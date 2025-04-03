@@ -32,6 +32,9 @@ public:
 
   node* copyExceptThree();
   node* copyExceptThree(node* curr);
+
+  void insertXAfterNodes(int x);
+  void insertXAfterNodes(node* pos, int x);
 private:
          node * head;   //notice there is both a head
          node * tail;   //and a tail, common for DLL

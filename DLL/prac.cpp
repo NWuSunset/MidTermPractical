@@ -108,3 +108,33 @@ node* dlist::copyExceptThree(node* curr) {
     return newNode;
   }
 
+
+void dlist::insertXAfterNodes(int x) {
+  insertXAfterNodes(head, x);
+}
+
+void dlist::insertXAfterNodes(node* pos, int x) {
+  if (pos == nullptr) {
+    return; //base case end of list
+  }
+
+  node* newNode = new node {
+    x, //data
+    pos,   //previous
+    pos->next //next value
+  };
+  //put is as pos next
+  pos->next = newNode;
+
+  if (newNode->next != nullptr) { //if this node was the last in the list
+    newNode->next->previous = newNode; //update next node's previous
+  }
+
+  
+  if (newNode->next == nullptr) { //if tail
+    tail = newNode;
+  } 
+
+  //move twice over
+  insertXAfterNodes(newNode->next, x);
+}

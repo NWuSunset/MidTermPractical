@@ -10,8 +10,9 @@ int main()
     //PLEASE PUT YOUR CODE HERE to call the function assigned
     //    object.removeGreaterNine();
     //object.swapAdjacent();
-    node* newHead = object.copyExceptThree();
-    //object.display();
+    //node* newHead = object.copyExceptThree();
+    object.insertXAfterNodes(12);
+    object.display();
     
     return 0;
 }
